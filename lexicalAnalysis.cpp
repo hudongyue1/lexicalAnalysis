@@ -97,11 +97,13 @@ void error() {
 }
 
 // 输出结果到文件
-ofstream fOut("result.txt", ios::out);
+ofstream fOut1("result1.txt", ios::out);
+ofstream fOut2("result2.txt", ios::out);
 
 // 输出分析 
 void pushResult(const string& str, string attribute = "——") {
-	fOut << "( " << rowCount << " )       " << setw(15) << left << str << "   " << attribute << endl;
+	fOut1 << "( " << rowCount << " )       " << setw(15) << left << str << "   " << attribute << endl;
+	fOut2 << str << "\t" << rowCount << endl;
 }
 
 
@@ -123,8 +125,8 @@ int main() {
 		return 0;
 	}
 
-	fOut << "词法分析结果：\n" << endl;
-	fOut << "行数：    记号            属性" << endl;
+	fOut1 << "词法分析结果：\n" << endl;
+	fOut1 << "行数：    记号            属性" << endl;
 	do {
 		switch (state) {
 		case 0: {
